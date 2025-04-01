@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://3clrr6oriqqh"]
+
+[ext_resource type="ArrayMesh" uid="uid://ffs8ve7s1lqm" path="res://Models/car.obj" id="1_tbg07"]
+[ext_resource type="PackedScene" uid="uid://cqlykn1pn5my3" path="res://Models/South Kigali.blend" id="1_y6fhp"]
+[ext_resource type="Script" uid="uid://du3f8yf1mpd50" path="res://car.gd" id="6_k14y7"]
+[ext_resource type="Texture2D" uid="uid://4f2pd7y301po" path="res://Materials/Finish/Tiles012_2K-JPG_Color.jpg" id="8_aefky"]
+[ext_resource type="Texture2D" uid="uid://dj7omokdqlp5g" path="res://Materials/Finish/Tiles012_2K-JPG_NormalDX.jpg" id="9_y6fhp"]
+[ext_resource type="Texture2D" uid="uid://biielaja2ldce" path="res://Materials/Finish/Tiles012_2K-JPG_Roughness.jpg" id="10_5y4b1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78584"]
+size = Vector3(4.12854, 0.655472, 1.4)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbg07"]
+sky_top_color = Color(0.793011, 0.889393, 1, 1)
+sky_horizon_color = Color(0.880438, 0.570302, 0.378616, 1)
+
+[sub_resource type="Sky" id="Sky_re4s4"]
+sky_material = SubResource("ProceduralSkyMaterial_tbg07")
+
+[sub_resource type="Environment" id="Environment_2t3f2"]
+background_mode = 2
+sky = SubResource("Sky_re4s4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huup3"]
+albedo_texture = ExtResource("8_aefky")
+roughness_texture = ExtResource("10_5y4b1")
+normal_enabled = true
+normal_texture = ExtResource("9_y6fhp")
+uv1_scale = Vector3(1, 17.5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_raqs6"]
+material = SubResource("StandardMaterial3D_huup3")
+size = Vector2(2, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14rjo"]
+size = Vector3(1.62012, 42.189, 35.0742)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Car" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0381, -13.6951, -76.3384)
+collision_priority = 100.0
+mass = 830.0
+continuous_cd = true
+script = ExtResource("6_k14y7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406761, 0)
+shape = SubResource("BoxShape3D_78584")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car"]
+mesh = ExtResource("1_tbg07")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.192441, 0.816367, 0)
+environment = SubResource("Environment_2t3f2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1037, 25.4661, 0)
+
+[node name="Finish" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3184, -14.1366, -71.8826)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Finish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516929, 0)
+mesh = SubResource("PlaneMesh_raqs6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Finish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.5945, 0)
+shape = SubResource("BoxShape3D_14rjo")
+
+[node name="South Kigali" parent="." instance=ExtResource("1_y6fhp")]
+transform = Transform3D(98250, 0, 0, 0, 41307.8, 0, 0, 0, 98250, 6924.67, -254.397, 3451.67)
+
+[connection signal="body_entered" from="Finish" to="Car" method="_on_finish_body_entered"]
