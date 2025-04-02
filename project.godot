@@ -10,10 +10,17 @@ config_version=5
 
 [application]
 
-config/name="F1"
+config/name="F1 in Rwanda"
+config/description="An F1 simulator on a hypothetical Rwanda track."
 run/main_scene="uid://3clrr6oriqqh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://6bn3137uw80p"
+config/icon="uid://c7vyh5j1x0qn7"
+
+[physics]
+
+common/physics_ticks_per_second=120
 
 [rendering]
 
