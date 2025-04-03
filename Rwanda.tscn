@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://3clrr6oriqqh"]
+[gd_scene load_steps=22 format=3 uid="uid://3clrr6oriqqh"]
 
 [ext_resource type="PackedScene" uid="uid://cqlykn1pn5my3" path="res://Models/South Kigali.blend" id="1_4giv3"]
-[ext_resource type="ArrayMesh" uid="uid://ffs8ve7s1lqm" path="res://Models/car.obj" id="1_tbg07"]
+[ext_resource type="PackedScene" uid="uid://ffs8ve7s1lqm" path="res://Models/car.obj" id="1_tbg07"]
 [ext_resource type="Script" uid="uid://du3f8yf1mpd50" path="res://car.gd" id="6_k14y7"]
 [ext_resource type="FontFile" uid="uid://i3tlv0jvjkb8" path="res://ITC Eras Demi Regular.otf" id="7_e6ui8"]
 [ext_resource type="Texture2D" uid="uid://4f2pd7y301po" path="res://Materials/Finish/Tiles012_2K-JPG_Color.jpg" id="8_aefky"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://biielaja2ldce" path="res://Materials/Finish/Tiles012_2K-JPG_Roughness.jpg" id="10_5y4b1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_78584"]
-size = Vector3(4.12854, 0.655472, 1.4)
+size = Vector3(3.36795, 0.638771, 1.4)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbg07"]
 sky_top_color = Color(0.793011, 0.889393, 1, 1)
@@ -43,7 +43,7 @@ default_font = ExtResource("7_e6ui8")
 
 [sub_resource type="Animation" id="Animation_m5sjh"]
 resource_name = "Fade Out"
-length = 0.5
+length = 9.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,6 +55,102 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start Panel/Subtitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Panel/GetReady:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start Panel/Logo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start Panel/Countdown:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start Panel/Countdown:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["[center]3", "[center]2", "[center]1", "[center]Go!"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Start Panel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Start Panel/FinishTitle:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Start Panel/ResetNotification:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_aefky"]
@@ -71,10 +167,206 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start Panel/Countdown:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Panel/Logo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start Panel/GetReady:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start Panel/Subtitle:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start Panel/Countdown:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[center]3"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Start Panel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Start Panel/FinishTitle:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Start Panel/ResetNotification:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_y6fhp"]
+resource_name = "Finish"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start Panel/Subtitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Panel/GetReady:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start Panel/Logo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start Panel/FinishTitle:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start Panel/ResetNotification:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Start Panel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Start Panel/Countdown:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y6fhp"]
 _data = {
 &"Fade Out": SubResource("Animation_m5sjh"),
+&"Finish": SubResource("Animation_y6fhp"),
 &"RESET": SubResource("Animation_aefky")
 }
 
@@ -90,13 +382,12 @@ mass = 830.0
 continuous_cd = true
 script = ExtResource("6_k14y7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406761, 0)
-shape = SubResource("BoxShape3D_78584")
+[node name="Mesh" parent="Car" instance=ExtResource("1_tbg07")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Car"]
-mesh = ExtResource("1_tbg07")
-skeleton = NodePath("../..")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209961, 0.415131, 0)
+shape = SubResource("BoxShape3D_78584")
 
 [node name="Camera3D" type="Camera3D" parent="Car"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.192441, 0.816367, 0)
@@ -189,6 +480,60 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_m5sjh")
 
+[node name="Countdown" type="RichTextLabel" parent="HUD/Start Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -115.5
+offset_right = 178.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_aefky")
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "[center]3"
+
+[node name="FinishTitle" type="RichTextLabel" parent="HUD/Start Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -46.5
+offset_right = 138.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_aefky")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Finish!"
+
+[node name="ResetNotification" type="RichTextLabel" parent="HUD/Start Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 23.5
+offset_right = 121.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_aefky")
+bbcode_enabled = true
+text = "[center]Press R to go again."
+
 [node name="Arrow Prompts" type="Panel" parent="HUD"]
 layout_mode = 1
 anchors_preset = 3
@@ -246,7 +591,7 @@ grow_vertical = 2
 theme = SubResource("Theme_aefky")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[center]150 MPH"
+text = "[center]0 MPH"
 
 [node name="Clock Holder" type="Panel" parent="HUD"]
 layout_mode = 1
@@ -264,10 +609,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -59.0
-offset_top = 2.0
-offset_right = 59.0
-offset_bottom = 46.0
+offset_left = -108.0
+offset_right = 108.0
+offset_bottom = 65.0
 grow_horizontal = 2
 theme = SubResource("Theme_aefky")
 theme_override_font_sizes/normal_font_size = 35
