@@ -6,7 +6,9 @@ var forward_force = 16500
 var backward_force = 10000
 
 func _ready() -> void:
-	await get_tree().create_timer(7.0).timeout
+	await get_tree().create_timer(4.0).timeout
+	get_node("Start Sound").playing = true
+	await get_tree().create_timer(3.0).timeout
 	active = true
 
 func _physics_process(delta: float) -> void:	
@@ -21,6 +23,13 @@ func _physics_process(delta: float) -> void:
 		
 		if (Input.is_key_pressed(KEY_UP)):
 			apply_force(Vector3(-forward_force*cos(rotation.y), 0, forward_force*sin(rotation.y)))
+			if !get_node("Revved Engine").playing:
+				get_node("Revved Engine").playing = true
+				get_node("Ambient Engine").playing = false
+		elif get_node("Revved Engine").playing:
+			get_node("Ambient Engine").playing = true
+			get_node("Revved Engine").playing = false
+			
 		if (Input.is_key_pressed(KEY_DOWN)):
 			apply_force(Vector3(backward_force*cos(rotation.y), 0, -backward_force*sin(rotation.y)))
 		if (Input.is_key_pressed(KEY_LEFT)):
@@ -32,6 +41,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_finish_body_entered(body: Node3D) -> void:
 	if body.name == "Car":
-		print("finish")
-		active = false# Replace with function body.
+		active = false
+		get_node("Ambient Engine").playing = true
+		get_node("Revved Engine").playing = false
+		get_node("Finish Sound").playing = true
 		get_parent().get_node("HUD/AnimationPlayer").play("Finish")

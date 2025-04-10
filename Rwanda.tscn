@@ -1,17 +1,22 @@
-[gd_scene load_steps=22 format=3 uid="uid://3clrr6oriqqh"]
+[gd_scene load_steps=27 format=3 uid="uid://3clrr6oriqqh"]
 
 [ext_resource type="PackedScene" uid="uid://cqlykn1pn5my3" path="res://Models/South Kigali.blend" id="1_4giv3"]
-[ext_resource type="PackedScene" uid="uid://ffs8ve7s1lqm" path="res://Models/car.obj" id="1_tbg07"]
+[ext_resource type="PackedScene" uid="uid://c2h4v6vlwnigp" path="res://Models/Car.blend" id="3_raqs6"]
+[ext_resource type="AudioStream" uid="uid://mxvjuvjq0odd" path="res://Audio/engine_ambient.wav" id="4_y6fhp"]
+[ext_resource type="AudioStream" uid="uid://bwgl58518g00l" path="res://Audio/engine_rev.wav" id="5_5y4b1"]
+[ext_resource type="AudioStream" uid="uid://cbywbydlrjj2m" path="res://Audio/start.wav" id="6_huup3"]
 [ext_resource type="Script" uid="uid://du3f8yf1mpd50" path="res://car.gd" id="6_k14y7"]
+[ext_resource type="AudioStream" uid="uid://clumb4e3cy6ig" path="res://Audio/finish.wav" id="6_raqs6"]
 [ext_resource type="FontFile" uid="uid://i3tlv0jvjkb8" path="res://ITC Eras Demi Regular.otf" id="7_e6ui8"]
 [ext_resource type="Texture2D" uid="uid://4f2pd7y301po" path="res://Materials/Finish/Tiles012_2K-JPG_Color.jpg" id="8_aefky"]
 [ext_resource type="Texture2D" uid="uid://6bn3137uw80p" path="res://Sprites/logo.png" id="8_m5sjh"]
 [ext_resource type="Texture2D" uid="uid://lavp0rsfcme6" path="res://Sprites/arrow_keys.png" id="9_m5sjh"]
 [ext_resource type="Texture2D" uid="uid://dj7omokdqlp5g" path="res://Materials/Finish/Tiles012_2K-JPG_NormalDX.jpg" id="9_y6fhp"]
 [ext_resource type="Texture2D" uid="uid://biielaja2ldce" path="res://Materials/Finish/Tiles012_2K-JPG_Roughness.jpg" id="10_5y4b1"]
+[ext_resource type="PackedScene" uid="uid://cuof60ex062c4" path="res://Models/Finish.blend" id="10_aefky"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_78584"]
-size = Vector3(3.36795, 0.638771, 1.4)
+size = Vector3(3.36795, 0.675343, 1.4)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbg07"]
 sky_top_color = Color(0.793011, 0.889393, 1, 1)
@@ -153,6 +158,105 @@ tracks/8/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_y6fhp"]
+resource_name = "Finish"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start Panel/Subtitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Start Panel/GetReady:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start Panel/Logo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start Panel/FinishTitle:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start Panel/ResetNotification:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Start Panel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Start Panel/Countdown:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_aefky"]
 length = 0.001
 tracks/0/type = "value"
@@ -264,105 +368,6 @@ tracks/8/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_y6fhp"]
-resource_name = "Finish"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Start Panel/Subtitle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Start Panel/GetReady:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Start Panel/Logo:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Start Panel/FinishTitle:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Start Panel/ResetNotification:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Start Panel:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Start Panel/Countdown:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y6fhp"]
 _data = {
 &"Fade Out": SubResource("Animation_m5sjh"),
@@ -376,17 +381,17 @@ _data = {
 transform = Transform3D(18894.2, 0, 0, 0, 18894.2, 0, 0, 0, 18894.2, 19345.6, -473.652, 1940.98)
 
 [node name="Car" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4204.53, -278.125, 2757.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4204.53, -278.27, 2757.6)
 collision_priority = 100.0
 mass = 830.0
 continuous_cd = true
 script = ExtResource("6_k14y7")
 
-[node name="Mesh" parent="Car" instance=ExtResource("1_tbg07")]
+[node name="Mesh" parent="Car" instance=ExtResource("3_raqs6")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209961, 0.415131, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0209961, 0.396851, 0)
 shape = SubResource("BoxShape3D_78584")
 
 [node name="Camera3D" type="Camera3D" parent="Car"]
@@ -394,11 +399,35 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.192
 environment = SubResource("Environment_2t3f2")
 far = 10000.0
 
+[node name="Ambient Engine" type="AudioStreamPlayer3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313354, 0)
+stream = ExtResource("4_y6fhp")
+autoplay = true
+
+[node name="Revved Engine" type="AudioStreamPlayer3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313354, 0)
+stream = ExtResource("5_5y4b1")
+volume_db = -30.0
+
+[node name="Finish Sound" type="AudioStreamPlayer3D" parent="Car"]
+stream = ExtResource("6_raqs6")
+
+[node name="Start Sound" type="AudioStreamPlayer3D" parent="Car"]
+stream = ExtResource("6_huup3")
+volume_db = -25.0
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1037, 25.4661, 0)
 
+[node name="Finish Gate" parent="." instance=ExtResource("10_aefky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4214.8, -278.427, 2756.72)
+
+[node name="Finish Gate Logo" type="Sprite3D" parent="."]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 4215.89, -265.497, 2756.72)
+texture = ExtResource("8_m5sjh")
+
 [node name="Finish" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999964, -0.0084822, 0, 0.0084822, 0.999964, 4214.81, -278.849, 2756.74)
+transform = Transform3D(1, 0, 0, 0, 0.999964, -0.0084822, 0, 0.0084822, 0.999964, 4214.81, -278.851, 2756.74)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516929, 0)
