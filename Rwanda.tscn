@@ -382,10 +382,10 @@ _data = {
 transform = Transform3D(18894.2, 0, 0, 0, 18894.2, 0, 0, 0, 18894.2, -9465.52, -483.968, -8371)
 
 [node name="Track" parent="." instance=ExtResource("2_14rjo")]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -9465.52, -640.771, -8289.31)
+transform = Transform3D(153.025, 0, 0, 0, 75, 0, 0, 0, 153.025, 4652.3, -488.186, 3630.68)
 
 [node name="Car" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4204.53, -468.701, 2757.6)
+transform = Transform3D(-0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, -0.750688, 5425.87, -459.365, 2426.38)
 collision_priority = 100.0
 mass = 830.0
 continuous_cd = true
@@ -424,14 +424,14 @@ volume_db = -25.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1037, 25.4661, 0)
 
 [node name="Finish Gate" parent="." instance=ExtResource("10_aefky")]
-transform = Transform3D(0.976986, 0, 0.213303, 0, 1, 0, -0.213303, 0, 0.976986, 4214.81, -468.249, 2756.8)
+transform = Transform3D(-2.14062, 0, -2.91048, 0, 3.61292, 0, 2.91048, 0, -2.14062, 5286.06, -469.122, 2585.1)
 
 [node name="Finish Gate Logo" type="Sprite3D" parent="."]
-transform = Transform3D(-0.63991, 0, 2.93096, 0, 3, 0, -2.93096, 0, -0.63991, 4215.87, -455.319, 2756.57)
+transform = Transform3D(8.73146, 0, -6.42187, 0, 10.8388, 0, 6.42187, 0, 8.73146, 5283.74, -422.407, 2588.26)
 texture = ExtResource("8_m5sjh")
 
 [node name="Finish" type="Area3D" parent="."]
-transform = Transform3D(0.976986, 0, 0.213303, 0, 1, 0, -0.213303, 0, 0.976986, 4214.82, -468.822, 2756.82)
+transform = Transform3D(-2.14062, 0, -2.91048, 0, 3.61292, 0, 2.91048, 0, -2.14062, 5285.99, -471.192, 2585.07)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516929, 0)
