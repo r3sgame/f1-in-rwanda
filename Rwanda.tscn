@@ -1,6 +1,5 @@
 [gd_scene load_steps=28 format=3 uid="uid://3clrr6oriqqh"]
 
-[ext_resource type="PackedScene" uid="uid://cqlykn1pn5my3" path="res://Models/South Kigali.blend" id="1_4giv3"]
 [ext_resource type="PackedScene" uid="uid://55q33haisen2" path="res://Models/Track.blend" id="2_14rjo"]
 [ext_resource type="PackedScene" uid="uid://c2h4v6vlwnigp" path="res://Models/Car.blend" id="3_raqs6"]
 [ext_resource type="AudioStream" uid="uid://mxvjuvjq0odd" path="res://Audio/engine_ambient.wav" id="4_y6fhp"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7omokdqlp5g" path="res://Materials/Finish/Tiles012_2K-JPG_NormalDX.jpg" id="9_y6fhp"]
 [ext_resource type="Texture2D" uid="uid://biielaja2ldce" path="res://Materials/Finish/Tiles012_2K-JPG_Roughness.jpg" id="10_5y4b1"]
 [ext_resource type="PackedScene" uid="uid://cuof60ex062c4" path="res://Models/Finish.blend" id="10_aefky"]
+[ext_resource type="PackedScene" uid="uid://baajl6rjqhi0" path="res://Models/Background.blend" id="15_14rjo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_78584"]
 size = Vector3(3.36795, 0.675343, 1.4)
@@ -378,14 +378,11 @@ _data = {
 
 [node name="Node3D" type="Node3D"]
 
-[node name="South Kigali" parent="." instance=ExtResource("1_4giv3")]
-transform = Transform3D(18894.2, 0, 0, 0, 18894.2, 0, 0, 0, 18894.2, -9465.52, -483.968, -8371)
-
 [node name="Track" parent="." instance=ExtResource("2_14rjo")]
-transform = Transform3D(153.025, 0, 0, 0, 75, 0, 0, 0, 153.025, 4652.3, -488.186, 3630.68)
+transform = Transform3D(38, 0, 0, 0, 10, 0, 0, 0, 38, 4652.3, -488.186, 3630.68)
 
 [node name="Car" type="RigidBody3D" parent="."]
-transform = Transform3D(-0.750688, 0, -0.660657, 0, 1, 0, 0.660657, 0, -0.750688, 5425.87, -459.365, 2426.38)
+transform = Transform3D(-0.550437, 0, -0.834877, 0, 1, 0, 0.834877, 0, -0.550437, 4840.95, -484.673, 3330.06)
 collision_priority = 100.0
 mass = 830.0
 continuous_cd = true
@@ -423,15 +420,13 @@ volume_db = -25.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1037, 25.4661, 0)
 
-[node name="Finish Gate" parent="." instance=ExtResource("10_aefky")]
-transform = Transform3D(-2.14062, 0, -2.91048, 0, 3.61292, 0, 2.91048, 0, -2.14062, 5286.06, -469.122, 2585.1)
-
-[node name="Finish Gate Logo" type="Sprite3D" parent="."]
-transform = Transform3D(8.73146, 0, -6.42187, 0, 10.8388, 0, 6.42187, 0, 8.73146, 5283.74, -422.407, 2588.26)
-texture = ExtResource("8_m5sjh")
+[node name="Start" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.511907, 0, -0.70267, 0, 0.869366, 0, 0.70267, 0, -0.511907, 4846.28, -484.715, 3320.18)
+mesh = SubResource("PlaneMesh_raqs6")
+skeleton = NodePath("../Finish")
 
 [node name="Finish" type="Area3D" parent="."]
-transform = Transform3D(-2.14062, 0, -2.91048, 0, 3.61292, 0, 2.91048, 0, -2.14062, 5285.99, -471.192, 2585.07)
+transform = Transform3D(-0.511907, 0, -0.70267, 0, 0.869366, 0, 0.70267, 0, -0.511907, 4803.2, -485.028, 3380.24)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516929, 0)
@@ -440,6 +435,13 @@ mesh = SubResource("PlaneMesh_raqs6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.5945, 0)
 shape = SubResource("BoxShape3D_14rjo")
+
+[node name="Finish Gate" parent="Finish" instance=ExtResource("10_aefky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00463867, 0.572937, -0.0205078)
+
+[node name="Finish Gate Logo" type="Sprite3D" parent="Finish"]
+transform = Transform3D(-9.53674e-07, 0, 3.00001, 0, 3.00001, 0, -3.00001, 0, -9.53674e-07, 1.08057, 13.5029, -0.0212402)
+texture = ExtResource("8_m5sjh")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -665,5 +667,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_y6fhp")
 }
 autoplay = "Fade Out"
+
+[node name="Background" parent="." instance=ExtResource("15_14rjo")]
+transform = Transform3D(21524.1, 0, 0, 0, 8151.64, 0, 0, 0, 21524.1, 3798.47, -2906.79, 3630.68)
+
+[node name="Background2" parent="." instance=ExtResource("15_14rjo")]
+transform = Transform3D(21524.1, 0, 0, 0, 8151.64, 0, 0, 0, 21524.1, 18260.1, -2906.79, 3630.68)
 
 [connection signal="body_entered" from="Finish" to="Car" method="_on_finish_body_entered"]

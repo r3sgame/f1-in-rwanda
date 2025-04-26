@@ -34,13 +34,24 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "uid://snhv7ij2nmda"
+},
 "Material.002": {
 "use_external/enabled": true,
 "use_external/path": "uid://cris7jo63tuw"
+},
+"ant01_NormalOnly": {
+"use_external/enabled": true,
+"use_external/path": "uid://d1ykr1i5tk7um"
 }
 },
 "nodes": {
 "PATH:NurbsPath_001": {
+"generate/physics": true
+},
+"PATH:ant01": {
 "generate/physics": true
 }
 }

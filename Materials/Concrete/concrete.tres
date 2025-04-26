@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://snhv7ij2nmda"]
+
+[ext_resource type="Texture2D" uid="uid://br07q4w8w263f" path="res://Materials/Concrete/Concrete044D_2K-JPG_Color.jpg" id="1_84w4s"]
+[ext_resource type="Texture2D" uid="uid://k0dp6tp0sdo3" path="res://Materials/Concrete/Concrete044D_2K-JPG_AmbientOcclusion.jpg" id="2_qx428"]
+[ext_resource type="Texture2D" uid="uid://bykv1ujurguok" path="res://Materials/Concrete/Concrete044D_2K-JPG_Metalness.jpg" id="3_ty5n7"]
+[ext_resource type="Texture2D" uid="uid://bxsv0vlnecnw8" path="res://Materials/Concrete/Concrete044D_2K-JPG_NormalDX.jpg" id="4_rls77"]
+[ext_resource type="Texture2D" uid="uid://dnd7ml81hytn" path="res://Materials/Concrete/Concrete044D_2K-JPG_Roughness.jpg" id="5_1qjq3"]
+
+[resource]
+albedo_texture = ExtResource("1_84w4s")
+metallic = 1.0
+metallic_texture = ExtResource("3_ty5n7")
+roughness_texture = ExtResource("5_1qjq3")
+normal_enabled = true
+normal_texture = ExtResource("4_rls77")
+ao_enabled = true
+ao_texture = ExtResource("2_qx428")
+uv1_scale = Vector3(2000, 500000, 100)
